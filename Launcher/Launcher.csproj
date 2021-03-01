@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <StartupObject>Launcher.LauncherApp</StartupObject>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <OutputPath>$(SolutionDir)\bin\debug\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <OutputPath>$(SolutionDir)\bin\release\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SBLib\SBLib.csproj" />
+  </ItemGroup>
+
+</Project>
